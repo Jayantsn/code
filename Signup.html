@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .signup-container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+        .signup-container h2 {
+            margin-bottom: 20px;
+        }
+        .input-field, .phone-container select, .phone-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .phone-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .phone-container select {
+            width: 35%;
+        }
+        .phone-container input {
+            width: 65%;
+        }
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .signup-btn:hover {
+            background: #333;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <!-- Ensure action points to signup.php & method is POST -->
+        <form id="signupForm" action="signup.php" method="POST">
+            <input type="email" id="email" name="email" class="input-field" placeholder="Email" required>
+
+            <div class="phone-container">
+                <select id="countryCode" name="countryCode" required>
+                    <option value="+1">+1 (USA)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+91">+91 (India)</option>
+                    <option value="+61">+61 (Australia)</option>
+                    <option value="+81">+81 (Japan)</option>
+                </select>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+            <p id="error" class="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const emailInput = document.getElementById("email").value;
+            const errorMessage = document.getElementById("error");
+
+            // Gmail restriction check
+            if (emailInput.endsWith("@gmail.com")) {
+                errorMessage.textContent = "Signing up with Gmail is not permitted.";
+            } else {
+                errorMessage.textContent = "";
+                this.submit(); // Submit the form if no error
+            }
+        });
+    </script>
+</body>
+</html>

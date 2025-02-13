@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Front Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        .header:hover {
+            background-color: #e0e7ff;
+        }
+        .logo-container {
+            text-align: center;
+        }
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+            flex-grow: 1;
+            justify-content: center;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #0056b3;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            padding: 6px 12px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-signin {
+            background: none;
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+        .btn-signin:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-signup {
+            background: #007bff;
+            color: white;
+        }
+        .btn-signup:hover {
+            background-color: #0056b3;
+        }
+        .hero {
+            text-align: left;
+            padding: 50px;
+            background-color: #e0e7ff;
+            transition: background-color 0.3s;
+        }
+        .hero:hover {
+            background-color: #c7d2fe;
+        }
+        .hero h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .hero .dynamic-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056b3;
+            transition: opacity 0.5s ease-in-out;
+            border-radius: 5px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            background: #f8f8f8;
+            transition: background-color 0.3s;
+        }
+        .footer:hover {
+            background-color: #e0e7ff;
+        }
+        .subscribe input {
+            padding: 8px;
+            margin-right: 5px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .subscribe button {
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .subscribe button:hover {
+            background-color: #0056b3;
+        }
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .footer {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="at-ease-logo.png" alt="At Ease Logo" class="logo">
+        </div>
+        <nav class="nav">
+            <a href="#">Products</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#">Community</a>
+        </nav>
+        <div class="buttons">
+            <button class="btn btn-signin" onclick="location.href='login.html'">Sign in</button>
+            <button class="btn btn-signup" onclick="location.href='signup.html'">Sign Up For Free</button>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>At Ease</h1>
+        <span class="dynamic-text" id="changingText">Extract</span>
+        <p>Accurate Contacts in Seconds!</p>
+    </section>
+    <footer class="footer">
+        <div class="subscribe">
+            <h3>Follow the latest trends</h3>
+            <p>With our daily newsletter</p>
+            <form action="#">
+                <input type="email" placeholder="you@example.com" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div>
+            <h4>Use cases</h4>
+            <a href="#">Email Extraction</a><br>
+            <a href="#">Email Verifier</a><br>
+            <a href="#">Phone Number Extractor</a><br>
+            <a href="#">CRM</a>
+        </div>
+        <div>
+            <h4>Resources</h4>
+            <a href="#">Blog</a><br>
+            <a href="#">Best practices</a><br>
+            <a href="#">Support</a><br>
+            <a href="#">Developers</a><br>
+            <a href="#">Resource library</a>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <a href="#">About</a><br>
+            <a href="#">Pricing</a><br>
+            <a href="#">Customers</a><br>
+            <a href="#">Newsrooms</a>
+        </div>
+        <div class="social-icons">
+            <span>✖</span>
+            <span>📷</span>
+            <span>▶</span>
+            <span>🔗</span>
+        </div>
+    </footer>
+    <script>
+        const words = ["Verify", "Connect", "Extract"];
+        let index = 0;
+        const changingText = document.getElementById("changingText");
+
+        function changeText() {
+            changingText.style.opacity = "0";
+            setTimeout(() => {
+                changingText.textContent = words[index];
+                changingText.style.opacity = "1";
+                index = (index + 1) % words.length;
+            }, 500);
+        }
+
+        setInterval(changeText, 1500);
+    </script>
+</body>
+</html>
