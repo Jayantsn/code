@@ -11,56 +11,131 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
+            background-color: #e3f2fd;
         }
         .login-container {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 300px;
+            width: 350px;
+            border: 1px solid #90caf9;
         }
-        .login-container h2 {
-            margin-bottom: 20px;
+        h2 {
+            color: #1565c0;
+            margin-bottom: 10px;
         }
-        .input-field {
+        .social-login {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
+            margin: 8px 0;
             border-radius: 5px;
+            border: 1px solid #1976d2;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .google {
+            color: #1e88e5;
+        }
+        .outlook {
+            color: #0d47a1;
+        }
+        .social-login img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        .or-divider {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        .or-divider::before,
+        .or-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #90caf9;
+            margin: 0 10px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #64b5f6;
+        }
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-wrapper img {
+            position: absolute;
+            right: 10px;
+            width: 20px;
+            cursor: pointer;
         }
         .login-btn {
             width: 100%;
             padding: 10px;
-            background: black;
+            background: #1565c0;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
         }
         .login-btn:hover {
-            background: #333;
+            background: #0d47a1;
         }
-        .forgot-password {
-            display: block;
-            margin-top: 10px;
+        .footer-links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .footer-links a {
             text-decoration: none;
-            color: blue;
+            color: #1565c0;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <input type="email" class="input-field" placeholder="Email" required>
-            <input type="password" class="input-field" placeholder="Password" required>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
-        <a href="#" class="forgot-password">Forgot Password?</a>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <p>Welcome back!</p>
+
+    <button class="social-login google">
+        <img src="ico-google.svg" alt="Google Logo">
+        Sign in with Google
+    </button>
+
+    <button class="social-login outlook">
+        <img src="ico-outlook.svg" alt="Outlook Logo">
+        Sign in with Microsoft Outlook
+    </button>
+
+    <div class="or-divider">or</div>
+
+    <input type="email" placeholder="Email Address">
+
+    <div class="password-wrapper">
+        <input type="password" placeholder="Password">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Eye_icon.svg" alt="Show Password">
     </div>
+
+    <button class="login-btn">Login</button>
+
+    <div class="footer-links">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+        <p><a href="#">Forgot your Password?</a></p>
+    </div>
+</div>
+
 </body>
 </html>
